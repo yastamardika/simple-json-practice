@@ -1,0 +1,24 @@
+{
+    "name": "Yasta Mardika",
+    "nickname": "Yst",
+    "dob": {
+        "month": "november",
+        "year": "1999",
+        "date": "12"
+    },
+    "age": 22,
+    "balance": null,
+    "married": false,
+    "pets": [
+        {
+            "name": "Opi",
+            "age": 2,
+            "color": "black"
+        },
+        {
+            "name": "Bule",
+            "age": 1,
+            "color": "white"
+        }
+    ]
+}

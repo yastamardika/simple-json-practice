@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simple JSON Implementation</title>
+  </head>
+  <body>
+    <div class="hero min-h-screen bg-base-200">
+      <div class="flex-col justify-center hero-content lg:flex-row">
+        <div class="text-center lg:text-left">
+          <h1 class="mb-5 font-bold">Hello there</h1>
+          <p class="mb-5" id="jsonPar">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
+          </p>
+          <button class="btn btn-primary" onclick="revealData()">
+            Generate Data
+          </button>
+        </div>
+        <div
+          class="artboard phone-3 artboard-demo shadow-2xl bg-base-100 block"
+        >
+          <div class="container box-border h-32 w-32 p-4 border-4">
+            <pre id="dataResult" class="h-auto w-9">
+ The value will be displayed here..</pre
+            >
+            <div class="form-control mt-6">
+              <input type="button" value="remove" class="btn btn-primary" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const rawJSONData = fetch("./personal-data.json")
+      .then((response) => {
+        return response.json();
+      })
+    const personalData = {
+      name: "Yasta Mardika",
+      nickname: "Yst",
+      dob: {
+        month: "november",
+        year: "1999",
+        date: "12",
+      },
+      age: 22,
+      balance: null,
+      married: false,
+      pets: [
+        {
+          name: "Opi",
+          age: 2,
+          color: "black",
+        },
+        {
+          name: "Bule",
+          age: 1,
+          color: "white",
+        },
+      ],
+    };
+    function revealData() {
+      //   const json_value = document.getElementById("jsonPar").value;
+      //   const json_result = JSON.parse(json_value);
+      let resultPlaceholder = document.getElementById("dataResult");
+      resultPlaceholder.innerHTML = JSON.stringify(personalData);
+      console.log(rawJSONData);
+    }
+  </script>
+</html>
